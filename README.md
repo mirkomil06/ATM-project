@@ -1,4 +1,4 @@
-<h1>ATM-project</h1?
+<h1>ATM-project</h1>
 221408 MIRKOMIL MIRZOHIDOV
 220838 Muhammad Saidahmetov
 221443 Asilbek Tashpulatov
