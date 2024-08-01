@@ -17,10 +17,11 @@ public class Account {
 
     // validate users pin
     public boolean validatePIN (int userPIN) {
-        if (pin == userPIN)
-            return true;
-        else
-            return false;
+        return pin == userPIN;
+    }
+
+    public int getPin(){
+        return pin;
     }
 
     public double getAvailableBalance(){

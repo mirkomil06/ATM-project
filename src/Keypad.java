@@ -14,4 +14,12 @@ public class Keypad {
     public int getInput() {
         return input.nextInt();
     }
+
+    public double getInputDouble() {
+        return input.nextDouble();
+    }
+
+    public String getStr(){
+        return input.nextLine();
+    }
 }
