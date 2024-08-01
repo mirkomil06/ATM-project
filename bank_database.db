@@ -1,0 +1,38 @@
+-- Database: bank_database
+
+-- DROP DATABASE IF EXISTS bank_database;
+
+CREATE DATABASE bank_database
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'C'
+    LC_CTYPE = 'C'
+    LOCALE_PROVIDER = 'libc'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+GRANT TEMPORARY, CONNECT ON DATABASE bank_database TO PUBLIC;
+
+GRANT CREATE, CONNECT ON DATABASE bank_database TO postgres;
+GRANT TEMPORARY ON DATABASE bank_database TO postgres WITH GRANT OPTION;
+
+
+-- Table: public.accounts
+
+-- DROP TABLE IF EXISTS public.accounts;
+
+CREATE TABLE IF NOT EXISTS public.accounts
+(
+    accountnumber integer NOT NULL,
+    pin integer,
+    availablebalance double precision,
+    totalbalance double precision,
+    CONSTRAINT accounts_pkey PRIMARY KEY (accountnumber)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.accounts
+    OWNER to postgres;
