@@ -36,3 +36,22 @@ TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.accounts
     OWNER to postgres;
+
+
+-- Table: public.admins
+
+-- DROP TABLE IF EXISTS public.admins;
+
+CREATE TABLE IF NOT EXISTS public.admins
+(
+    id integer NOT NULL DEFAULT nextval('admins_id_seq'::regclass),
+    email character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    password character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT admins_pkey PRIMARY KEY (id),
+    CONSTRAINT admins_email_key UNIQUE (email)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.admins
+    OWNER to postgres;
